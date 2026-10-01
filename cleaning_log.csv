@@ -1,0 +1,13 @@
+issue,rule_applied,before,after,impact,rationale
+Whitespace,Strip leading/trailing whitespace,Text fields contained surrounding spaces,Whitespace removed,No row loss,Prevents false category splits.
+Categorical inconsistency,"Normalize case, abbreviations and full names",Mixed category representations,Canonical categories,No row loss,Makes grouping and validation deterministic.
+Incorrect data types,Convert mixed text/numeric fields to numeric,"Mixed representations such as Class 3, Yes and $7.25",Numeric types established,No row loss,Required for calculations and validation.
+Invalid numeric values,Set impossible Age/Fare values to missing,2 invalid ages; 1 invalid fares,Invalid values became NaN,Handled by imputation rules,Prevents impossible observations from entering analysis.
+Text consistency,Collapse repeated whitespace and standardize ticket case,Extra spaces and mixed case,Canonical text formatting,No row loss,Improves matching and readability.
+Missing primary key,Drop rows without PassengerId,2,2 rows removed,Rows removed,A primary key is required for record identity.
+Missing Embarked,Mode imputation,5,Filled with S,No row loss,Small amount of categorical missingness.
+Missing Cabin,Use explicit Unknown category,689,Unknown,No row loss,Avoids fabricating cabin information.
+Missing Age,"Median by Pclass + Sex, then global median",185,0,No row loss,Context-aware imputation preserves subgroup structure.
+Missing Fare,"Median by Pclass, then global median",1,0,No row loss,Fare is associated with passenger class.
+Exact duplicates,Remove exact duplicate rows,8,0,8 rows removed,Prevents double-counting identical records.
+Duplicate primary keys,Keep most complete record per PassengerId,4,0,One canonical record per key,Uses a transparent completeness rule for conflicting copies.

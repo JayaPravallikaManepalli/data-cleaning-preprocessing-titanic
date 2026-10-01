@@ -1,0 +1,6 @@
+Metric,Raw,Cleaned,Change
+Rows,901,889,-12
+Columns,12,12,0
+Missing cells,880,0,-880
+Exact duplicate rows,7,0,-7
+Duplicate PassengerId rows,22,0,-22

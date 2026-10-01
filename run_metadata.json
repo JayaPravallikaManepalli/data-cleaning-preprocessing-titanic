@@ -1,0 +1,26 @@
+{
+  "project": "Data Cleaning and Preprocessing",
+  "dataset": "Titanic",
+  "public_reference": "https://github.com/datasciencedojo/datasets/blob/master/titanic.csv",
+  "raw_shape": [
+    901,
+    12
+  ],
+  "cleaned_shape": [
+    889,
+    12
+  ],
+  "validation_checks": {
+    "no_exact_duplicate_rows": true,
+    "unique_passenger_id": true,
+    "no_missing_passenger_id": true,
+    "survived_binary": true,
+    "pclass_valid": true,
+    "sex_valid": true,
+    "embarked_valid": true,
+    "age_valid": true,
+    "fare_nonnegative": true,
+    "required_columns_present": true
+  },
+  "pytest_output": "\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m.\u001b[0m\u001b[32m                                                                     [100%]\u001b[0m\n\u001b[32m\u001b[32m\u001b[1m4 passed\u001b[0m\u001b[32m in 0.06s\u001b[0m\u001b[0m"
+}
